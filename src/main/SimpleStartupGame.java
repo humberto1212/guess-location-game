@@ -14,22 +14,12 @@ public class SimpleStartupGame {
 
         int numOfGuesses = 0;
 
-        
-
         //Random location
         Random rand = new Random();
         int intRandom = rand.nextInt(5);
         int intRandom2 = intRandom + 1;
         int intRandom3 = intRandom + 2;
         int[] randomPositions = {intRandom, intRandom2, intRandom3};
-
-        // // Enter data using BufferReader
-        // BufferedReader reader = new BufferedReader(
-        //     new InputStreamReader(System.in));
-
-        // // Reading data using readLine
-        // String hitNumberStr = reader.readLine();
-        // int hitNumberInt = Integer.parseInt(hitNumberStr);
 
         //SimpleStartup
         SimpleStartup sp = new SimpleStartup();
@@ -42,16 +32,16 @@ public class SimpleStartupGame {
         while(result != "kill"){
 
              // Enter data using BufferReader
-        BufferedReader reader = new BufferedReader(
+            BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
 
-        // Reading data using readLine
-        String hitNumberStr = reader.readLine();
-        int hitNumberInt = Integer.parseInt(hitNumberStr);
+            // Reading data using readLine
+            String hitNumberStr = reader.readLine();
+            int hitNumberInt = Integer.parseInt(hitNumberStr);
 
             result = sp.checkYourSelf(hitNumberInt);
             numOfGuesses++;
-        }
+        }//END WHILE
 
         System.out.print("congratulation, you made " + numOfGuesses + " guesses" );
 
