@@ -1,18 +1,18 @@
 package src.main;
 
+import java.io.IOException;
 import java.util.Random;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import src.main.SimpleStartup.SimpleStartup;
+import src.main.GameHelper.*;
 
 public class SimpleStartupGame {
     
     public static void main(String[] args) throws IOException{
 
         int numOfGuesses = 0;
+
+        GameHelper helper = new GameHelper();
 
         //Random location
         Random rand = new Random();
@@ -31,15 +31,10 @@ public class SimpleStartupGame {
 
         while(result != "kill"){
 
-             // Enter data using BufferReader
-            BufferedReader reader = new BufferedReader(
-            new InputStreamReader(System.in));
+            //Get user input
+            int guess = helper.getUserInput("enter a number");
 
-            // Reading data using readLine
-            String hitNumberStr = reader.readLine();
-            int hitNumberInt = Integer.parseInt(hitNumberStr);
-
-            result = sp.checkYourSelf(hitNumberInt);
+            result = sp.checkYourSelf(guess);
             numOfGuesses++;
         }//END WHILE
 
