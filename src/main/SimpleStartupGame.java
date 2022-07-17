@@ -1,10 +1,12 @@
 package src.main;
 
 import java.io.IOException;
-import java.util.Random;
+//import java.util.Random;
 
-import src.main.SimpleStartup.SimpleStartup;
 import src.main.GameHelper.*;
+import src.main.Startup.Startup;
+
+import java.util.*;
 
 public class SimpleStartupGame {
     
@@ -15,14 +17,20 @@ public class SimpleStartupGame {
         GameHelper helper = new GameHelper();
 
         //Random location
-        Random rand = new Random();
-        int intRandom = rand.nextInt(5);
-        int intRandom2 = intRandom + 1;
-        int intRandom3 = intRandom + 2;
-        int[] randomPositions = {intRandom, intRandom2, intRandom3};
+        // Random rand = new Random();
+        // int intRandom = rand.nextInt(5);
+        // int intRandom2 = intRandom + 1;
+        // int intRandom3 = intRandom + 2;
+
+        
+        ArrayList<String> randomPositions = new ArrayList<String>();
+
+        randomPositions.add("A1");
+        randomPositions.add("A2");
+        randomPositions.add("A3");
 
         //SimpleStartup
-        SimpleStartup sp = new SimpleStartup();
+        Startup sp = new Startup();
 
         //set random location in array
         sp.setLocationCells(randomPositions);
@@ -32,7 +40,14 @@ public class SimpleStartupGame {
         while(result != "kill"){
 
             //Get user input
-            int guess = helper.getUserInput("enter a number");
+            String guess = helper.getUserInput("enter a number");
+
+                    //System.out.print(sp);
+
+                    // for (int cell: sp){
+                    //     System.out.print(cell);
+                    // }
+            
 
             result = sp.checkYourSelf(guess);
             numOfGuesses++;
