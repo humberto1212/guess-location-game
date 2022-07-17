@@ -8,7 +8,7 @@ public class GameHelper {
     //--------------
     //Get User Input
     //--------------
-    public int getUserInput(String prompt) throws IOException{
+    public String getUserInput(String prompt) throws IOException{
 
         System.out.print(prompt + ": ");
 
@@ -18,9 +18,9 @@ public class GameHelper {
 
             // Reading data using readLine
             String hitNumberStr = reader.readLine();
-            int hitNumberInt = Integer.parseInt(hitNumberStr);
+            //int hitNumberInt = Integer.parseInt(hitNumberStr);
 
-            return hitNumberInt;
+            return hitNumberStr;
 
     }
 }
